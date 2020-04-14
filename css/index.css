@@ -130,15 +130,32 @@ html,
 body {
   height: 100%;
 }
+.title {
+  color: #d76c38;
+  margin: 4% 0;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #d76c38;
+}
+.info {
+  color: #152238;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  margin-bottom: 10%;
+}
 body {
   padding-top: 15px;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background: linear-gradient(to top right, #00072D, #D1D7E0);
 }
 .container {
   margin: 0 auto;
   width: 80%;
+  height: 100%;
 }
 .container header nav {
   color: #D1D7E0;
@@ -231,14 +248,17 @@ body {
   }
 }
 .container section {
+  height: 90vh;
   display: flex;
 }
 @media (max-width: 650px) {
   .container section {
     flex-direction: column;
+    height: auto;
   }
 }
 .container section .left {
+  height: 100%;
   background-color: #d76c38;
   flex: 0 1 30%;
   position: relative;
@@ -296,7 +316,77 @@ body {
   text-align: left;
 }
 .container section .right {
-  height: 90vh;
   background-color: #e6f2ff;
   flex: 0 1 70%;
+}
+.container section .right .content_right {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  margin-top: 20%;
+}
+.container section .right .content_right .objective h3 {
+  color: #d76c38;
+  margin: 4% 0;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #d76c38;
+}
+.container section .right .content_right .objective p {
+  color: #152238;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  margin-bottom: 10%;
+}
+.container section .right .content_right .skills h3 {
+  color: #d76c38;
+  margin: 4% 0;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #d76c38;
+}
+.container section .right .content_right .skills ul {
+  color: #152238;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  margin-bottom: 10%;
+}
+.container section .right .content_right .education h3 {
+  color: #d76c38;
+  margin: 4% 0;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #d76c38;
+}
+.container section .right .content_right .education p {
+  color: #152238;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  margin-bottom: 10%;
+}
+.container section .right .content_right .work h3 {
+  color: #d76c38;
+  margin: 4% 0;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #d76c38;
+}
+.container section .right .content_right .work p {
+  color: #152238;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  margin-bottom: 10%;
 }
