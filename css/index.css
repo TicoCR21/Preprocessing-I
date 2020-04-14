@@ -130,11 +130,54 @@ html,
 body {
   height: 100%;
 }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Heebo Thin'), local('Heebo-Thin'), url(https://fonts.gstatic.com/s/heebo/v5/NGS0v5_NC0k9P9mVTbQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Heebo Light'), local('Heebo-Light'), url(https://fonts.gstatic.com/s/heebo/v5/NGS3v5_NC0k9P9ldb5RL.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Heebo'), local('Heebo-Regular'), url(https://fonts.gstatic.com/s/heebo/v5/NGS6v5_NC0k9P-Hx.ttf) format('truetype');
+}
 .title {
   color: #d76c38;
+  font-style: 'Roboto', sans-serif;
   margin: 4% 0;
   font-size: 1.7rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 4px;
   padding-bottom: 15px;
   border-bottom: 3px solid #d76c38;
@@ -145,16 +188,17 @@ body {
   line-height: 1.5;
   letter-spacing: 2px;
   margin-bottom: 10%;
+  font-style: 'Heebo', sans-serif;
 }
 body {
   padding-top: 15px;
   width: 100vw;
-  height: auto;
+  height: 100vmax;
   background: linear-gradient(to top right, #00072D, #D1D7E0);
 }
 .container {
-  margin: 0 auto;
   width: 80%;
+  margin: 0 auto;
   height: 100%;
 }
 .container header nav {
@@ -248,11 +292,13 @@ body {
   }
 }
 .container section {
-  height: 90vh;
+  height: 90vmax;
   display: flex;
+  flex-wrap: nowrap;
 }
 @media (max-width: 650px) {
   .container section {
+    height: 90%;
     flex-direction: column;
     height: auto;
   }
@@ -260,7 +306,7 @@ body {
 .container section .left {
   height: 100%;
   background-color: #d76c38;
-  flex: 0 1 30%;
+  flex: 1 0 30%;
   position: relative;
 }
 .container section .left .triangle::before {
@@ -316,6 +362,7 @@ body {
   text-align: left;
 }
 .container section .right {
+  height: 100%;
   background-color: #e6f2ff;
   flex: 0 1 70%;
 }
@@ -328,9 +375,10 @@ body {
 }
 .container section .right .content_right .objective h3 {
   color: #d76c38;
+  font-style: 'Roboto', sans-serif;
   margin: 4% 0;
   font-size: 1.7rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 4px;
   padding-bottom: 15px;
   border-bottom: 3px solid #d76c38;
@@ -341,12 +389,14 @@ body {
   line-height: 1.5;
   letter-spacing: 2px;
   margin-bottom: 10%;
+  font-style: 'Heebo', sans-serif;
 }
 .container section .right .content_right .skills h3 {
   color: #d76c38;
+  font-style: 'Roboto', sans-serif;
   margin: 4% 0;
   font-size: 1.7rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 4px;
   padding-bottom: 15px;
   border-bottom: 3px solid #d76c38;
@@ -357,12 +407,14 @@ body {
   line-height: 1.5;
   letter-spacing: 2px;
   margin-bottom: 10%;
+  font-style: 'Heebo', sans-serif;
 }
 .container section .right .content_right .education h3 {
   color: #d76c38;
+  font-style: 'Roboto', sans-serif;
   margin: 4% 0;
   font-size: 1.7rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 4px;
   padding-bottom: 15px;
   border-bottom: 3px solid #d76c38;
@@ -373,12 +425,14 @@ body {
   line-height: 1.5;
   letter-spacing: 2px;
   margin-bottom: 10%;
+  font-style: 'Heebo', sans-serif;
 }
 .container section .right .content_right .work h3 {
   color: #d76c38;
+  font-style: 'Roboto', sans-serif;
   margin: 4% 0;
   font-size: 1.7rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 4px;
   padding-bottom: 15px;
   border-bottom: 3px solid #d76c38;
@@ -389,4 +443,5 @@ body {
   line-height: 1.5;
   letter-spacing: 2px;
   margin-bottom: 10%;
+  font-style: 'Heebo', sans-serif;
 }

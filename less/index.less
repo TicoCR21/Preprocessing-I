@@ -1,19 +1,19 @@
 //imports
-@import "_reset.less";
-@import "_variables.less";
+@import "_reset";
+@import "_variables";
 
 body
 {
 	padding-top: 15px;
 	width: 100vw;
-	height: auto;
+	height: 100vmax;
 	background: linear-gradient( to top right, @background_color, @font_color );
 }
 
 .container
 {
-	margin: 0 auto;
-	width: 80%;	
+	width: 80%;
+	margin: 0 auto;	
 	height: 100%;
 
 	header nav
@@ -131,11 +131,13 @@ body
 	
 	section
 	{
-		height: 90vh;
+		height: 90vmax;
 		display: flex;
+		flex-wrap: nowrap;
 
 		@media( max-width: 650px )
 		{
+			height: 90%;
 			flex-direction: column;
 			height: auto;
 		}
@@ -144,7 +146,7 @@ body
 		{
 			height: 100%;
 			background-color:  @orange_theme;
-			flex: 0 1 30%;
+			flex: 1 0 30%;
 			position: relative;
 
 			.triangle
@@ -223,6 +225,7 @@ body
 		
 		.right
 		{
+			height: 100%;
 			background-color: @right_background;
 			flex: 0 1 70%;
 

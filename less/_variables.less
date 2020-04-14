@@ -1,20 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400&display=swap');
 // colors
 @orange_theme: #d76c38;
 @font_color: #D1D7E0;
 @steel_blue: #3E78B2;
 @right_background: #e6f2ff;
 @background_color: #00072D;
-@main_blue : #152238;
+@main_blue: #152238;
 
 // fonts
+@font_title: 'Roboto', sans-serif;
+@font_body: 'Heebo', sans-serif;
 
 // mixins
 .title
 {
     color: @orange_theme;
+    font-style: @font_title;
     margin: 4% 0;
     font-size: 1.7rem;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 4px;
     padding-bottom: 15px;
     border-bottom: 3px solid @orange_theme
@@ -27,4 +33,5 @@
     line-height: 1.5;
     letter-spacing: 2px;
     margin-bottom: 10%;
+    font-style: @font_body;
 }
