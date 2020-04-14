@@ -141,27 +141,34 @@ body {
   width: 80%;
 }
 .container header nav {
-  width: 100%;
   color: #D1D7E0;
   background-color: #152238;
   padding: 25px;
   display: flex;
   justify-content: flex-end;
-  border-bottom: 3px solid #e67300;
+  border-bottom: 3px solid #d76c38;
 }
 .container header nav ul {
   display: flex;
   justify-content: space-evenly;
-  flex-basis: 40%;
+  width: 70%;
+  height: 100%;
+}
+@media (min-width: 1400px) {
+  .container header nav ul {
+    flex-basis: 50%;
+    width: 60%;
+  }
 }
 .container header nav li a {
   color: #D1D7E0;
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 10px 35px;
   position: relative;
   transition: all 0.5s;
   flex: 1 0 auto;
   z-index: 0;
+  margin: 0 auto;
 }
 .container header nav li a:hover {
   color: #D1D7E0;
@@ -173,13 +180,15 @@ body {
   position: absolute;
   width: 25%;
   height: 100%;
-  background-color: #e67300;
-  left: 0;
+  background-color: #d76c38;
   top: 0;
   transform: scaleY(0);
   transform-origin: top;
   transition: all 0.5s;
   z-index: -1;
+}
+.container header nav li span:nth-child( 1 ) {
+  left: 0%;
 }
 .container header nav li span:nth-child( 2 ) {
   left: 25%;
@@ -192,4 +201,29 @@ body {
 .container header nav li span:nth-child( 4 ) {
   left: 75%;
   transition-delay: 450ms;
+}
+section {
+  display: flex;
+}
+section .left {
+  height: 90vh;
+  background-color: #d76c38;
+  flex: 0 1 30%;
+  position: relative;
+}
+section .left::before {
+  content: "HELLO";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #152238;
+  -webkit-clip-path: polygon(57% 0, 100% 0, 0 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+  clip-path: polygon(57% 0, 100% 0, 0 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+}
+section .right {
+  height: 90vh;
+  background-color: #e6f2ff;
+  flex: 0 1 70%;
 }

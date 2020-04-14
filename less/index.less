@@ -6,11 +6,10 @@
 
 body
 {
-	// background-color: linear-gradient( to right,red, @font_color );
 	padding-top: 15px;
 	width: 100vw;
 	height: 100vh;
-	background: linear-gradient( to top right, #00072D, @font_color );
+	background: linear-gradient( to top right, @background_color, @font_color );
 }
 
 .container
@@ -20,19 +19,25 @@ body
 	
 	header nav
 	{
-		width: 100%;
 		color: @font_color;
 		background-color: @main_blue;
 		padding: 25px;
 		display: flex;
 		justify-content: flex-end;
-		border-bottom: 3px solid #e67300;
+		border-bottom: 3px solid @orange_theme;
 		
 		ul
 		{
 			display: flex;
 			justify-content: space-evenly;
-			flex-basis: 40%;
+			width: 70%;
+			height: 100%;
+
+			@media( min-width: 1400px )
+			{
+				flex-basis: 50%;
+				width: 60%;
+			}
 		}
 
 		li
@@ -41,11 +46,12 @@ body
 			{
 				color: @font_color;
 				text-decoration: none;
-				padding: 10px 30px;
+				padding: 10px 35px;
 				position: relative;
 				transition: all 0.5s;
 				flex: 1 0 auto;
 				z-index: 0;
+				margin: 0 auto;
 
 				&:hover 
 				{
@@ -63,13 +69,17 @@ body
 				position: absolute;
 				width: 25%;
 				height: 100%;
-				background-color: #e67300;
-				left: 0;
+				background-color: @orange_theme;
 				top: 0;
 				transform:  scaleY( 0 );
 				transform-origin: top;
 				transition: all 0.5s;
 				z-index: -1;
+
+				&:nth-child( 1 )
+				{
+					left: 0%;
+				}
 
 				&:nth-child( 2 )
 				{
@@ -94,18 +104,38 @@ body
 }
 
 
-// .left
-// 	{
-// 		width: 700px;
-// 		height: 100vh;
-// 		// background-color: green;
-// 		flex: 0 1 40%;
-// 	} // end of left
+section
+{
+	display: flex;
 
-// 	.right
-// 	{
-// 		width: 700px;
-// 		height: 100vh;
-// 		// background-color: blue;
-// 		flex: 0 1 60%;
-// 	} // end of right
+
+	.left
+	{
+		height: 90vh;
+		background-color:  @orange_theme;
+		flex: 0 1 30%;
+		position: relative;
+
+		&::before
+		{
+			content: "HELLO";
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			height: 50%;
+			background-color: @main_blue;
+			
+			-webkit-clip-path: polygon(57% 0, 100% 0, 0 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+			clip-path: polygon(57% 0, 100% 0, 0 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+		}
+	} // end of left
+
+
+	.right
+	{
+		height: 90vh;
+		background-color: @right_background;
+		flex: 0 1 70%;
+	} // end of right
+}
