@@ -1,8 +1,296 @@
-@import "_reset.less";
-@import "_variables.less";
+//imports
+@import "_reset";
+@import "_variables";
 
 body
 {
-	background-color: @background_color;
+	padding-top: 15px;
+	width: 100vw;
+	height: 100vmax;
+	background: linear-gradient( to top right, @background_color, @font_color );
+}
+
+.container
+{
+	width: 80%;
+	margin: 0 auto;	
+	height: 100%;
+
+	header nav
+	{
+		color: @font_color;
+		background-color: @main_blue;
+		padding: 25px;
+		display: flex;
+		justify-content: flex-end;
+		border-bottom: 3px solid @orange_theme;
+		
+		ul
+		{
+			display: flex;
+			justify-content: space-evenly;
+			width: 40%;
+			height: 100%;
+
+			@media( max-width: 1550px )
+			{
+				width: 50%;
+			}
+
+			@media( max-width: 1250px )
+			{
+				width: 60%;
+			}
+
+			@media( max-width: 1050px )
+			{
+				width: 100%;
+			}
+
+			@media( max-width: 650px )
+			{
+				flex-direction: column;
+				align-items: stretch;
+			}
+		}
+
+		li
+		{
+			a
+			{
+				color: @font_color;
+				text-decoration: none;
+				padding: 10px 35px;
+				position: relative;
+				transition: all 0.5s;
+				width: 40%;
+				flex: 1 0 auto;
+				z-index: 0;
+				margin: 0 auto;
+				text-align: center;
+
+				&:hover 
+				{
+					color: @font_color;
+				}
+
+				&:hover span
+				{
+					transform: scaleY( 1 );
+				}
+
+				@media( max-width: 650px )
+				{
+					display: flex;
+					width: 25%;
+				}
+			}
+
+			span
+			{
+				position: absolute;
+				width: 25%;
+				height: 100%;
+				background-color: @orange_theme;
+				top: 0;
+				transform:  scaleY( 0 );
+				transform-origin: top;
+				transition: all 0.5s;
+				z-index: -1;
+
+				&:nth-child( 1 )
+				{
+					left: 0%;
+				}
+
+				&:nth-child( 2 )
+				{
+					left: 25%;
+					transition-delay: 150ms;
+				}
+
+				&:nth-child( 3 )
+				{
+					left: 50%;
+					transition-delay: 300ms;
+				}
+
+				&:nth-child( 4 )
+				{
+					left: 75%;
+					transition-delay: 450ms;
+				}
+
+				@media( max-width: 650px )
+				{
+					background-color: transparent;
+				}
+			}
+		}
+	}
+	
+	section
+	{
+		height: 90vmax;
+		display: flex;
+		flex-wrap: nowrap;
+
+		@media( max-width: 650px )
+		{
+			height: 90%;
+			flex-direction: column;
+			height: auto;
+		}
+
+		.left
+		{
+			height: 100%;
+			background-color:  @orange_theme;
+			flex: 1 0 30%;
+			position: relative;
+
+			.triangle
+			{
+				&::before
+				{
+				content: "";
+				position: absolute;
+				top:0;
+				left:0;
+				width: 100%;
+				height: 50%;
+				background-color: @main_blue;
+				-webkit-clip-path: polygon(57% 0, 100% 0, 0 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+				clip-path: polygon(57% 0, 100% 0, 0 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+				}
+			}
+
+
+			.content
+			{
+				color: @font_color;
+				position: relative;
+				top: 43%;
+				
+				.name
+				{
+					@media( max-width: 650px )
+					{
+						margin-top: 100px;
+					}
+
+					h2
+					{
+						font-size: 2.2rem;
+						text-align: center;
+						letter-spacing: 4px;
+					}
+
+					h3
+					{
+						font-size: 1.5rem;
+						text-align: center;
+						letter-spacing: 2px;
+					}
+				}
+
+				.contact_information
+				{
+					margin-top: 75%;
+					margin-left: 10px;
+
+					@media( max-width: 650px )
+					{
+						margin-top: 10%;
+						padding-bottom: 40px;
+					}
+
+					h5
+					{
+						color: @main_blue;
+						font-size: 1.2rem;
+						letter-spacing: 2px;
+						text-decoration: underline;
+						margin-bottom: 15px;
+					}
+
+					p
+					{
+						font-size: 1rem;
+						text-align: left;
+					}
+				}
+			}
+		} // end of left
+		
+		.right
+		{
+			height: 100%;
+			background-color: @right_background;
+			flex: 0 1 70%;
+
+			.content_right
+			{
+				width: 80%;
+				display: flex;
+				margin: 0 auto;
+				flex-direction: column;
+				margin-top: 20%;
+
+				.objective
+				{	
+					h3
+					{
+						.title();
+					}
+
+				
+					p
+					{
+						.info();
+					}
+				}
+
+				.skills
+				{	
+					h3
+					{
+						.title();
+					}
+
+					ul
+					{
+						.info();
+					}
+				}
+
+				.education
+				{	
+					h3
+					{
+						.title();
+					}
+
+					p
+					{
+						.info();
+					}
+				}
+
+				.work
+				{	
+					h3
+					{
+						.title();
+					}
+
+					p
+					{
+						.info();
+					}
+				}
+			}
+		} // end of right
+	}
 }
 
