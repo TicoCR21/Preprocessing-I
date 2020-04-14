@@ -230,21 +230,20 @@ body {
     background-color: transparent;
   }
 }
-section {
+.container section {
   display: flex;
 }
 @media (max-width: 650px) {
-  section {
+  .container section {
     flex-direction: column;
   }
 }
-section .left {
-  height: 90vh;
+.container section .left {
   background-color: #d76c38;
   flex: 0 1 30%;
   position: relative;
 }
-section .left::before {
+.container section .left .triangle::before {
   content: "";
   position: absolute;
   top: 0;
@@ -255,7 +254,48 @@ section .left::before {
   -webkit-clip-path: polygon(57% 0, 100% 0, 0 100%, 100% 100%, 0 100%, 0 100%, 0 0);
   clip-path: polygon(57% 0, 100% 0, 0 100%, 100% 100%, 0 100%, 0 100%, 0 0);
 }
-section .right {
+.container section .left .content {
+  color: #D1D7E0;
+  position: relative;
+  top: 43%;
+}
+@media (max-width: 650px) {
+  .container section .left .content .name {
+    margin-top: 100px;
+  }
+}
+.container section .left .content .name h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  letter-spacing: 4px;
+}
+.container section .left .content .name h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.container section .left .content .contact_information {
+  margin-top: 75%;
+  margin-left: 10px;
+}
+@media (max-width: 650px) {
+  .container section .left .content .contact_information {
+    margin-top: 10%;
+    padding-bottom: 40px;
+  }
+}
+.container section .left .content .contact_information h5 {
+  color: #152238;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+.container section .left .content .contact_information p {
+  font-size: 1rem;
+  text-align: left;
+}
+.container section .right {
   height: 90vh;
   background-color: #e6f2ff;
   flex: 0 1 70%;
