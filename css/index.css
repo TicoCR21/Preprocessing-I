@@ -131,5 +131,65 @@ body {
   height: 100%;
 }
 body {
-  background-color: #fcf9f1;
+  padding-top: 15px;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top right, #00072D, #D1D7E0);
+}
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+.container header nav {
+  width: 100%;
+  color: #D1D7E0;
+  background-color: #152238;
+  padding: 25px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 3px solid #e67300;
+}
+.container header nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-basis: 40%;
+}
+.container header nav li a {
+  color: #D1D7E0;
+  text-decoration: none;
+  padding: 10px 30px;
+  position: relative;
+  transition: all 0.5s;
+  flex: 1 0 auto;
+  z-index: 0;
+}
+.container header nav li a:hover {
+  color: #D1D7E0;
+}
+.container header nav li a:hover span {
+  transform: scaleY(1);
+}
+.container header nav li span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #e67300;
+  left: 0;
+  top: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.5s;
+  z-index: -1;
+}
+.container header nav li span:nth-child( 2 ) {
+  left: 25%;
+  transition-delay: 150ms;
+}
+.container header nav li span:nth-child( 3 ) {
+  left: 50%;
+  transition-delay: 300ms;
+}
+.container header nav li span:nth-child( 4 ) {
+  left: 75%;
+  transition-delay: 450ms;
 }
