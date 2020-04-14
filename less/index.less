@@ -15,8 +15,8 @@ body
 .container
 {
 	margin: 0 auto;
-	width: 80%;
-	
+	width: 80%;	
+
 	header nav
 	{
 		color: @font_color;
@@ -30,13 +30,28 @@ body
 		{
 			display: flex;
 			justify-content: space-evenly;
-			width: 70%;
+			width: 40%;
 			height: 100%;
 
-			@media( min-width: 1400px )
+			@media( max-width: 1550px )
 			{
-				flex-basis: 50%;
+				width: 50%;
+			}
+
+			@media( max-width: 1250px )
+			{
 				width: 60%;
+			}
+
+			@media( max-width: 1050px )
+			{
+				width: 100%;
+			}
+
+			@media( max-width: 650px )
+			{
+				flex-direction: column;
+				align-items: stretch;
 			}
 		}
 
@@ -49,9 +64,11 @@ body
 				padding: 10px 35px;
 				position: relative;
 				transition: all 0.5s;
+				width: 40%;
 				flex: 1 0 auto;
 				z-index: 0;
 				margin: 0 auto;
+				text-align: center;
 
 				&:hover 
 				{
@@ -61,6 +78,12 @@ body
 				&:hover span
 				{
 					transform: scaleY( 1 );
+				}
+
+				@media( max-width: 650px )
+				{
+					display: flex;
+					width: 25%;
 				}
 			}
 
@@ -98,6 +121,11 @@ body
 					left: 75%;
 					transition-delay: 450ms;
 				}
+
+				@media( max-width: 650px )
+				{
+					background-color: transparent;
+				}
 			}
 		}
 	}	
@@ -108,6 +136,10 @@ section
 {
 	display: flex;
 
+	@media( max-width: 650px )
+	{
+		flex-direction: column;
+	}
 
 	.left
 	{
@@ -118,7 +150,7 @@ section
 
 		&::before
 		{
-			content: "HELLO";
+			content: "";
 			position: absolute;
 			top:0;
 			left:0;

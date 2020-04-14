@@ -151,13 +151,28 @@ body {
 .container header nav ul {
   display: flex;
   justify-content: space-evenly;
-  width: 70%;
+  width: 40%;
   height: 100%;
 }
-@media (min-width: 1400px) {
+@media (max-width: 1550px) {
   .container header nav ul {
-    flex-basis: 50%;
+    width: 50%;
+  }
+}
+@media (max-width: 1250px) {
+  .container header nav ul {
     width: 60%;
+  }
+}
+@media (max-width: 1050px) {
+  .container header nav ul {
+    width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .container header nav ul {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 .container header nav li a {
@@ -166,15 +181,23 @@ body {
   padding: 10px 35px;
   position: relative;
   transition: all 0.5s;
+  width: 40%;
   flex: 1 0 auto;
   z-index: 0;
   margin: 0 auto;
+  text-align: center;
 }
 .container header nav li a:hover {
   color: #D1D7E0;
 }
 .container header nav li a:hover span {
   transform: scaleY(1);
+}
+@media (max-width: 650px) {
+  .container header nav li a {
+    display: flex;
+    width: 25%;
+  }
 }
 .container header nav li span {
   position: absolute;
@@ -202,8 +225,18 @@ body {
   left: 75%;
   transition-delay: 450ms;
 }
+@media (max-width: 650px) {
+  .container header nav li span {
+    background-color: transparent;
+  }
+}
 section {
   display: flex;
+}
+@media (max-width: 650px) {
+  section {
+    flex-direction: column;
+  }
 }
 section .left {
   height: 90vh;
@@ -212,7 +245,7 @@ section .left {
   position: relative;
 }
 section .left::before {
-  content: "HELLO";
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
